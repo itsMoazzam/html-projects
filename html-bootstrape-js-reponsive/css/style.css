@@ -1,0 +1,14 @@
+
+html, body {
+  overflow: auto; 
+  scrollbar-width: none; 
+  overflow-x: hidden;
+}
+
+.image{
+  height: 80vh;
+}
+.imags{
+  height: 500px;
+  width: 700px;
+}

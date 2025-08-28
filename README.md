@@ -7,7 +7,7 @@
 
 
 
- **LabTasks simple HTML CSS designs**
+ **LabTasks simple HTML CSS designs ...**
 
 
  *First
@@ -17,33 +17,33 @@
  ![Lab Task 2 ScreenShot](LabTask/assets/task2.png)
   
   
- **Password Varification**
+ **Password Varification ...**
  
  ![Password Varification Screenshot](Password-varification/assets/password-varification.png)
   
   
- **Sample Store**	
+ **Sample Store ...**	
   
  ![Sample Store Screenshot](Sample-store/assets/bookstore.png)
   
   
- **html-bootstrape-js-responsive**
+ **html-bootstrape-js-responsive ...**
   
  ![Resposive project Screenshot](html-bootstrape-js-reponsive/assets/responsive_task.png)
   
   
- **Js class Tasks Assigned **
+ **Js class Tasks Assigned ...**
   
- **First
+ *First
  ![First Task Screenshot](js-practice-tasks/assets/labtaskhtml/task1.png)
     
     
- **Second   
+ *Second   
  ![Second Task Screenshot](js-practice-tasks/assets/task2/Task2.png)
       
- **Third     
+ *Third     
  ![Third Task Screenshot](js-practice-tasks/assets/task3/Task3.png)
         
- **Fourth     
+ *Fourth     
  ![Fourth Task Screenshot](js-practice-tasks/assets/task4/Task4.png)
   

@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?familyCarter+One&display=swap " rel ="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?familyCarter+One&display=swap " rel="stylesheet">
     <style>
-        *{ margin : 0; padding : 0 ; box-sizing : border-box;}
-        header{
-                width : 100%;
-                line-height : 15vh;
-                background-color: #20bf6b;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1{
+
+        header {
+            width: 100%;
+            line-height: 15vh;
+            background-color: #186fe2;
+        }
+
+        h1 {
             text-align: center;
             text-transform: uppercase;
             color: white;
-            font-family: 'carter one' , cursive;
+            font-family: 'carter one', cursive;
             font-size: 1.8rem;
             letter-spacing: 15px;
             text-shadow: 0 1px 0 #efefef,
-                         0 2px 0 #efefef,
-                         0 3px 0 #efefef,
-                         0 4px 0 #efefef,
-                         0 30px 5px rgba(0,0,0,.1);
-            
+                0 2px 0 #efefef,
+                0 3px 0 #efefef,
+                0 4px 0 #efefef,
+                0 30px 5px rgba(0, 0, 0, .1);
+
         }
-        section{
+
+        section {
             height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #7bed9f;
+            background-color: #ffffff;
         }
-        .Areagame{
+
+        .Areagame {
             width: 50%;
             height: 400px;
             padding: 20px 0;
-            background-color: #2ed573;
+            background-color: #2b00e9;
             display: flex;
             font-family: 'Source Sans Pro', sans-serif;
             flex-direction: column;
@@ -45,11 +54,14 @@
             align-items: center;
             box-shadow: 0 8px 6px -6px black;
         }
-        h3{
+
+        h3 {
             text-align: center;
+            color: #efefef;
             font-size: 1.5rem;
         }
-        input{
+
+        input {
             width: 40%;
             padding: 15px 0;
             text-align: center;
@@ -62,7 +74,8 @@
             font-size: 1.1rem;
 
         }
-        button{
+
+        button {
             font-size: 1rem;
             cursor: pointer;
             outline: none;
@@ -70,93 +83,98 @@
             margin-top: 10px;
             color: #eb4d4b;
         }
-        button.btn{
+
+        button.btn {
             font-weight: 600;
             padding: 1rem 2rem;
             background: white;
             text-transform: uppercase;
             transition-property: all;
             transition-duration: 0.5s;
-            transition-timing-function: cubic-bezier(0.65,-0.25 , 0.25 , 1.95);
+            transition-timing-function: cubic-bezier(0.65, -0.25, 0.25, 1.95);
         }
-        .hidden{
+
+        .hidden {
             display: none;
         }
 
-        button.btn:hover,button.btn:focus,button.btn:active{
+        button.btn:hover,
+        button.btn:focus,
+        button.btn:active {
             letter-spacing: 0.125rem;
             word-spacing: 0.2rem;
         }
     </style>
 
 </head>
+
 <body>
     <header>
         <h1>Guess The word Game</h1>
     </header>
     <section>
-        <div class = "Areagame">
+        <div class="Areagame">
             <h3 class="msg">
 
             </h3>
-            <input type ="text" class = "hidden" >
-            <button class = "btn" >Click Here to start </button> 
+            <input type="text" class="hidden">
+            <button class="btn">Click Here to start </button>
         </div>
     </section>
     <script>
         const msg = document.querySelector('.msg');
-        const guess= document.querySelector('input');
+        const guess = document.querySelector('input');
         const btn = document.querySelector('.btn')
         let play = false;
-         let newwords = "";
-         let randwords = "";
-        let arr = ['SQL','Rust','Python','Swift','Ruby','CSharp' ,'Scala' , 'JavaScript','Java','Matlab','TypeScript','NoSQL','Perl','HTML','CSS','Kotlin' , 'google' , 'Pathaan' , 'Tayyab' , "Zubair" , 
-                    'Hamza' , 'irfan' , 'lady' , 'Guy' , 'person' , 'maxico' , 'paris' , 'canada' , 'spain' , 'women' , 'Horse' , 'Home' , 'Angular' , 'start' , 'Pakistan', 'China', 'Russia', 'brother' ]
+        let newwords = "";
+        let randwords = "";
+        let arr = ['SQL', 'Rust', 'Python', 'Swift', 'Ruby', 'CSharp', 'Scala', 'JavaScript', 'Java', 'Matlab', 'TypeScript', 'NoSQL', 'Perl', 'HTML', 'CSS', 'Kotlin', 'google', 'Pathaan', 'Tayyab', "Zubair", 'Hamza', 'irfan', 'lady', 'Guy', 'person', 'maxico', 'paris', 'canada', 'spain', 'women', 'Horse', 'Home', 'Angular', 'start', 'Pakistan', 'China', 'Russia', 'brother']
         const creatnewwords = () => {
-                let rand = Math.floor(Math.random()*arr.length)
-                let newtnum = arr[rand];
-                return newtnum;
-            }
-            const scramblewords = (ar) => {
-                for(let i =ar.length ; i > 0 ; i-- ){
-                    let t = ar[i];
-                    let j =Math.floor(Math.random()*(i+1))
+            let rand = Math.floor(Math.random() * arr.length)
+            let newtnum = arr[rand];
+            return newtnum;
+        }
+        const scramblewords = (ar) => {
+            for (let i = ar.length; i > 0; i--) {
+                let t = ar[i];
+                let j = Math.floor(Math.random() * (i + 1))
 
-                    ar[i] = ar[j];
-                    ar[j] = t;
-                }
-                    return ar;
+                ar[i] = ar[j];
+                ar[j] = t;
             }
+            return ar;
+        }
 
-        btn.addEventListener('click', function(){
-            if(!play){
+        btn.addEventListener('click', function () {
+            if (!play) {
                 play = true;
                 btn.innerHTML = "Guess";
                 guess.classList.toggle('hidden');
-                 newwords = creatnewwords();
+                newwords = creatnewwords();
                 randwords = scramblewords(newwords.split("")).join("");
                 msg.innerHTML = `Guess the word : ${randwords}`;
-             }
-             else{
+            }
+            else {
                 let tword = guess.value;
-                if(tword === newwords){
-                    play= false;
-                    msg.innerHTML =`Awesome It's correct. It is ${newwords}`;
-                    btn.innerHTML  = "Play Again";
+                if (tword === newwords) {
+                    play = false;
+                    msg.innerHTML = `Awesome It's correct. It is ${newwords}`;
+                    btn.innerHTML = "Play Again";
                     guess.classList.toggle('hidden');
                     guess.value = "";
 
                 }
-                else{
-                    msg.innerHTML =`Sorry Boss . It's incorrect. Please try again  ${randwords}`;
+                else {
+                    msg.innerHTML = `Sorry Boss . It's incorrect. Please try again  ${randwords}`;
                     guess.value = "";
 
                 }
-             }
+            }
         })
 
 
     </script>
-    
+
 </body>
+
 </html>
